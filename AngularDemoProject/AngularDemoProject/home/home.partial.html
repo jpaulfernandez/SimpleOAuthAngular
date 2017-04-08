@@ -1,0 +1,21 @@
+﻿<div>
+    <h1>Hello {{vm.currentUser}}</h1>
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Full Name</td>
+            <td>Email Address</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr ng-repeat="users in vm.allUser">
+            <td>{{users.Id}}</td>
+            <td>{{users.FullName}}</td>
+            <td>{{users.EmailAddress}}</td>
+            <td><button ng-click="vm.registerOrModifyAttendee(users.Id)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+            <td><button ng-click="vm.deleteAttendee($index, users.Id)"><span class="glyphicon glyphicon-trash"></span></button></td> 
+        </tr>
+    </table>
+    <br/>
+    <button class="btn btn-success" ng-click="vm.registerOrModifyAttendee()">Register</button>
+</div>
